@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rita/2.2.16/rita.js"
+        integrity="sha512-wkGd7m6+YzvU8YQGCve4NMMla29ije8witcVtVOQwhNeui4o5F5KK4n5zFzDzyNavXkNF6HKsxBVSUl8bDwTZg=="
+        crossorigin="anonymous"></script>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        body {
+            font-family: "Open Sans";
+            display:flex;
+            flex-direction: column;
+        }
+        input {
+            display: block;
+            width: 90vw;
+            margin: 5vh auto 0px auto;
+            border:none;
+            outline:none;
+            background-color: #dddddd;
+            font-family: "Abel";
+            font-size: 2rem;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #output {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            width: 90vw;
+            margin: 10px auto 0px auto;
+        }
+
+        .word {
+            padding: 5px 10px;
+            margin: 9px 5px 0px 5px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+        }
+
+        .word-content {
+            position: absolute;
+            display: none;
+            padding: 5px;
+            font-size: 1.2rem;
+        }
+
+        .word-container:hover .word-content {
+            display: block;
+        }
+
+        #Rita {
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 80vh;
+            left: 50vw;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="text" id="input" value="The quick fox jumps over the lazy dog.">
+
+    <div id="output"></div>
+
+    <div id="Rita">Made with <a href="https://rednoise.org/rita/">Rita JS</a></div>
+
+    <script src="pos.js"></script>
+    <script src="handle.js"></script>
+</body>
+</html>
